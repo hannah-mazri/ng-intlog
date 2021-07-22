@@ -1,1 +1,32 @@
-<p>calendar-container works!</p>
+<div class="container">
+  <div class="header">{{ months[currentMonthIndex] }} {{ currentYear }}</div>
+  <div class="days">
+    <div>M</div>
+    <div>T</div>
+    <div>W</div>
+    <div>T</div>
+    <div>F</div>
+    <div>S</div>
+    <div>S</div>
+  </div>
+  <div class="dates">
+    <button
+      *ngFor="let prevMonthDate of getDatesInPreviousMonth()"
+      class="lastMonthDates w-full h-full"
+    >
+      {{ prevMonthDate }}
+    </button>
+    <button
+      *ngFor="let currentMonthDate of getDatesInCurrentMonth()"
+      class="w-full h-full"
+    >
+      {{ currentMonthDate }}
+    </button>
+    <button
+      *ngFor="let nextMonthDate of getDatesInNextMonth()"
+      class="nextMonthDates w-full h-full"
+    >
+      {{ nextMonthDate }}
+    </button>
+  </div>
+</div>
