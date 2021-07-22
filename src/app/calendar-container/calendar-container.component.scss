@@ -7,7 +7,7 @@
 
 .header {
   text-align: center;
-  padding: 12px 0;
+  padding: 8px 0;
   margin-bottom: 8px;
   background-color: lightpink;
   font-weight: 700;
@@ -17,8 +17,8 @@
 
 .days {
   display: grid;
-  grid-template-columns: repeat(7, 50px);
-  grid-template-rows: 50px;
+  grid-template-columns: repeat(7, 35px);
+  grid-template-rows: 35px;
   gap: 8px;
   align-items: center;
   text-align: center;
@@ -29,8 +29,8 @@
 
 .dates {
   display: inline-grid;
-  grid-template-columns: repeat(7, 50px);
-  grid-template-rows: repeat(6, 50px);
+  grid-template-columns: repeat(7, 35px);
+  grid-template-rows: repeat(6, 35px);
   gap: 0 8px;
   text-align: center;
   justify-items: center;
