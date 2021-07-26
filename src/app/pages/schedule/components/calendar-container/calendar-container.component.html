@@ -18,9 +18,15 @@
     </button>
     <button
       *ngFor="let currentMonthDate of getDatesInCurrentMonth()"
-      class="w-full h-full"
+      class="w-full h-full relative"
     >
       {{ currentMonthDate }}
+      <div
+        *ngIf="checkActivity(currentMonthDate)"
+        class="absolute -bottom-0.5 left-4 text-red-600 text-xl font-semibold"
+      >
+        .
+      </div>
     </button>
     <button
       *ngFor="let nextMonthDate of getDatesInNextMonth()"

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-calendar-container',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calendar-container.component.scss'],
 })
 export class CalendarContainerComponent implements OnInit {
+  @Input() scheduleDetail = [];
+  hasActivity = true;
+
   months = [
     'January',
     'February',
@@ -49,6 +52,16 @@ export class CalendarContainerComponent implements OnInit {
     this.getDatesInPreviousMonth();
     this.getDatesInCurrentMonth();
     this.getDatesInNextMonth();
+  }
+
+  get activityDates() {
+    return this.scheduleDetail.map((item) => {
+      return item['date'];
+    });
+  }
+
+  checkActivity(date: number) {
+    return this.activityDates.indexOf(date) > -1;
   }
 
   getDatesInPreviousMonth(): number[] {
