@@ -7,7 +7,7 @@
   </div>
 
   <div class="ml-20">
-    <app-schedule-detail [selectedActivity]="selectedActivity"></app-schedule-detail>
+    <app-schedule-detail [selectedActivity]="selectedActivity" (clickButtonEvent)="onButtonClickEvent($event)"></app-schedule-detail>
   </div>
 
   <div class="hidden absolute right-0 top-0 h-full w-80 bg-gray-200 shadow-xl px-6 pb-6 border-l">

@@ -45,4 +45,7 @@ export class ScheduleComponent implements OnInit {
       this.selectedActivity = '';
     }
   }
+
+  onButtonClickEvent(evt: boolean): void {
+  }
 }

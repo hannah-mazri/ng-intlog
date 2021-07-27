@@ -1,7 +1,7 @@
 <div class="bg-white shadow-md p-4 rounded-md w-80">
   <div class="flex justify-between items-center mb-4">
     <span class="font-semibold">Today's Event</span>
-    <button class="py-1.5 px-6 bg-black rounded-md text-white text-sm font-semibold">{{ selectedActivity ? 'Edit' : 'Add' }}</button>
+    <button class="py-1.5 px-6 bg-black rounded-md text-white text-sm font-semibold" (click)="onButtonClick()">{{ selectedActivity ? 'Edit' : 'Add' }}</button>
   </div>
   <div [ngClass]="selectedActivity ? '' : 'text-gray-500'">{{ selectedActivity ? selectedActivity : 'No activity on the selected date.' }}</div>
 </div>
