@@ -19,14 +19,15 @@
     <button
       *ngFor="let currentMonthDate of getDatesInCurrentMonth()"
       class="w-full h-full relative"
+      (click)="emitSelectedDate(currentMonthDate)"
     >
       {{ currentMonthDate }}
-      <div
+      <span
         *ngIf="checkActivity(currentMonthDate)"
         class="absolute -bottom-0.5 left-4 text-red-600 text-xl font-semibold"
       >
         .
-      </div>
+      </span>
     </button>
     <button
       *ngFor="let nextMonthDate of getDatesInNextMonth()"
