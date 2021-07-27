@@ -2,30 +2,21 @@
   <div class="flex flex-col">
     <app-calendar-container
       [scheduleDetail]="scheduleDetail"
+      (selectDateEvent)="passScheduleDetail($event)"
     ></app-calendar-container>
   </div>
+
   <div class="ml-20">
-    <div class="bg-white shadow-md p-4 rounded-md">
-      today's event (if none click add event, if exist click edit/delete)
-      <button onclick="toggleDrawer()">Toggle drawer</button>
+    <div class="bg-white shadow-md p-4 rounded-md w-80">
+      <div class="flex justify-between items-center mb-4">
+        <span class="font-semibold">Today's Event</span>
+        <button class="py-1.5 px-6 bg-black rounded-md text-white text-sm font-semibold">{{ selectedActivity ? 'Edit' : 'Add' }}</button>
+      </div>
+      <div [ngClass]="selectedActivity ? '' : 'text-gray-500'">{{ selectedActivity ? selectedActivity : 'No activity on the selected date.' }}</div>
     </div>
-    <div class="mt-8 bg-white shadow-md p-4 rounded-md">upcoming event</div>
   </div>
-  <div
-    class="
-      hidden
-      absolute
-      right-0
-      top-0
-      h-full
-      w-80
-      bg-gray-200
-      shadow-xl
-      px-6
-      pb-6
-      border-l
-    "
-  >
+
+  <div class="hidden absolute right-0 top-0 h-full w-80 bg-gray-200 shadow-xl px-6 pb-6 border-l">
     <div class="flex flex-col h-full">
       <div class="my-8 font-semibold text-lg uppercase">23 July 2021</div>
       <form class="flex flex-col justify-between h-full">
@@ -35,7 +26,7 @@
             <input type="time" name="time" id="time" />
           </div>
           <div class="flex flex-col mt-6">
-            <label for="activity" class="mb-1">Activity</label>
+            <label class="mb-1">Activity</label>
             <textarea name="activity" id="" cols="30" rows="10"></textarea>
           </div>
         </div>
