@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ScheduleDetail} from './components/calendar-container/calendar-container.component';
 
 @Component({
@@ -7,6 +7,7 @@ import {ScheduleDetail} from './components/calendar-container/calendar-container
   styleUrls: ['./schedule.component.scss'],
 })
 export class ScheduleComponent implements OnInit {
+  displayDrawer = false;
   selectedActivity = '';
   scheduleDetail: ScheduleDetail[] = [
     {
@@ -47,5 +48,6 @@ export class ScheduleComponent implements OnInit {
   }
 
   onButtonClickEvent(evt: boolean): void {
+    this.displayDrawer = evt;
   }
 }

@@ -1,38 +1,18 @@
-<div class="p-20 flex">
-  <div class="flex flex-col">
-    <app-calendar-container
-      [scheduleDetail]="scheduleDetail"
-      (selectDateEvent)="passScheduleDetail($event)"
-    ></app-calendar-container>
-  </div>
-
-  <div class="ml-20">
-    <app-schedule-detail [selectedActivity]="selectedActivity" (clickButtonEvent)="onButtonClickEvent($event)"></app-schedule-detail>
-  </div>
-
-  <div class="hidden absolute right-0 top-0 h-full w-80 bg-gray-200 shadow-xl px-6 pb-6 border-l">
-    <div class="flex flex-col h-full">
-      <div class="my-8 font-semibold text-lg uppercase">23 July 2021</div>
-      <form class="flex flex-col justify-between h-full">
-        <div>
-          <div class="flex flex-col">
-            <label for="time" class="mb-1">Time</label>
-            <input type="time" name="time" id="time" />
-          </div>
-          <div class="flex flex-col mt-6">
-            <label class="mb-1">Activity</label>
-            <textarea name="activity" id="" cols="30" rows="10"></textarea>
-          </div>
-        </div>
-        <div class="flex justify-end">
-          <button
-            type="submit"
-            class="py-3 px-12 rounded-md bg-gray-900 text-white"
-          >
-            Save
-          </button>
-        </div>
-      </form>
+<div class="flex justify-between w-full h-full">
+  <div class="flex">
+    <div class="p-20">
+      <app-calendar-container
+        [scheduleDetail]="scheduleDetail"
+        (selectDateEvent)="passScheduleDetail($event)"
+      ></app-calendar-container>
     </div>
+    <div class=" pt-20">
+      <app-schedule-detail [selectedActivity]="selectedActivity"
+                           (clickButtonEvent)="onButtonClickEvent($event)"></app-schedule-detail>
+    </div>
+  </div>
+
+  <div [ngClass]="displayDrawer ? 'translate-x-0 ' : 'translate-x-full'" class="transform transition duration-400 h-full w-full bg-gray-200 shadow-xl px-6 pb-6 border-l">
+    <app-drawer></app-drawer>
   </div>
 </div>

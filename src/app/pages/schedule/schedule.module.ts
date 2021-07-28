@@ -6,9 +6,10 @@ import { ScheduleComponent } from './schedule.component';
 
 import { CalendarContainerComponent } from './components/calendar-container/calendar-container.component';
 import {ScheduleDetailComponent} from './components/schedule-detail/schedule-detail.component';
+import { DrawerComponent } from './components/drawer/drawer.component';
 
 @NgModule({
-  declarations: [ScheduleComponent, ScheduleDetailComponent, CalendarContainerComponent],
+  declarations: [ScheduleComponent, ScheduleDetailComponent, CalendarContainerComponent, DrawerComponent],
   imports: [CommonModule, EventRoutingModule],
 })
 export class EventModule {}
