@@ -8,11 +8,22 @@
     </div>
     <div class=" pt-20">
       <app-schedule-detail [selectedActivity]="selectedActivity"
-                           (clickButtonEvent)="onButtonClickEvent($event)"></app-schedule-detail>
+                           (clickButtonEvent)="displayDrawer = true"></app-schedule-detail>
     </div>
   </div>
 
-  <div [ngClass]="displayDrawer ? 'translate-x-0 ' : 'translate-x-full'" class="transform transition duration-400 h-full w-80 bg-gray-200 shadow-xl px-6 pb-6 border-l">
-    <app-drawer></app-drawer>
+  <!--  <div [ngClass]="displayDrawer ? 'translate-x-0 ' : 'translate-x-full'" class="transform transition duration-400 h-full w-80 bg-gray-200 shadow-xl px-6 pb-6 border-l">-->
+  <!--  </div>-->
+</div>
+<div [ngClass]="displayDrawer ? '' : 'invisible'"
+     class="w-screen h-screen overflow-x-hidden absolute top-0 right-0 bg-black bg-opacity-50"
+     (click)="displayDrawer = false">
+  <div
+    [ngClass]="displayDrawer ? 'transform -translate-x-0 transition duration-400' :  'transform translate-x-full transition duration-400'"
+    class="relative">
+    <div class="bg-red-50 h-full w-80 absolute right-0">
+      <!--TODO: letak close button dalam drawer instead of click outside to close the drawer-->
+      <app-drawer></app-drawer>
+    </div>
   </div>
 </div>
